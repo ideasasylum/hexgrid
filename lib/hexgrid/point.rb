@@ -1,5 +1,5 @@
 class Point
-  attr_accessor :q, :r, :s
+  attr_reader :q, :r, :s
   include Comparable
 
   def initialize q, r, s = -q-r
