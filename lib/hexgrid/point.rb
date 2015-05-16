@@ -55,14 +55,30 @@ class Point
     (self - point).length
   end
 
-  valid_directions = [
-      Point.new(1, 0, -1), Point.new(1, -1, 0), Point.new(0, -1, 1),
-      Point.new(-1, 0, 1), Point.new(-1, 1, 0), Point.new(0, 1, -1)
+  EAST = Point.new(-1, 1, 0)
+  WEST = Point.new(1, -1, 0)
+  SOUTH_WEST = Point.new(0, -1, 1)
+  SOUTH_EAST = Point.new(-1, 0, 1)
+  NORTH_EAST = Point.new(0, 1, -1)
+  NORTH_WEST = Point.new(1, 0, -1)
+
+  VALID_DIRECTIONS = [
+      Point::EAST,
+      Point::SOUTH_EAST,
+      Point::SOUTH_WEST,
+      Point::WEST,
+      Point::NORTH_WEST,
+      Point::NORTH_EAST
   ]
 
   def neighbor direction
-    raise InvalidDirectionError unless valid_directions.include? direction
+    raise InvalidDirectionError unless Point::VALID_DIRECTIONS.include? direction
     self + direction
   end
   alias :neighbour :neighbor
+
+  def neighbors
+    Point::VALID_DIRECTIONS.map { |direction| neighbor direction }
+  end
+  alias :neighbours :neighbors
 end
