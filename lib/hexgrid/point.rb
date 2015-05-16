@@ -1,5 +1,6 @@
 class Point
   attr_accessor :q, :r, :s
+  include Comparable
 
   def initialize q, r, s = -q-r
     @q = q
@@ -18,6 +19,12 @@ class Point
 
   def hash
     [@q, @r, @s].hash
+  end
+
+  # FIXME: Sorting by the hash seems pretty dumb. We only do it so we
+  # can sort arrays of Points reliably for comparison
+  def <=> other
+    hash <=> other.hash
   end
 
   def + point
