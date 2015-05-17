@@ -1,4 +1,6 @@
 # Hexgrid
+[![Code Climate](https://codeclimate.com/github/ideasasylum/hexgrid/badges/gpa.svg)](https://codeclimate.com/github/ideasasylum/hexgrid)
+[![Build Status](https://travis-ci.org/ideasasylum/hexgrid.svg?branch=master)](https://travis-ci.org/ideasasylum/hexgrid)
 
 A Ruby implementation of the concepts described at [http://www.redblobgames.com/grids/hexagons/](http://www.redblobgames.com/grids/hexagons/)
 
