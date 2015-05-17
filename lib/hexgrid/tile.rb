@@ -4,8 +4,12 @@ class Tile
   attr_accessor :point
   attr_accessor :grid
 
-  def initialize point=nil
-    @point = point
+  def initialize *args
+    if args.length == 1
+      @point = args[0]
+    elsif args.length > 1
+      @point = Point.new *args
+    end
   end
 
   def neighbours

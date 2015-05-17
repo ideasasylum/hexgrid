@@ -13,7 +13,7 @@ describe Grid do
   end
 
   it "should store and retrieve tiles" do
-    tile2 = Tile.new(Point.new(1, 0, -1))
+    tile2 = Tile.new(1, 0, -1)
     tiles = [@tile, tile2]
     @grid << tiles
     @grid[@tile.point].must_equal @tile
