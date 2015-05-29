@@ -1,4 +1,4 @@
-class Tile
+class Hex
   include Comparable
 
   attr_accessor :point

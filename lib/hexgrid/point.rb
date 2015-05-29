@@ -9,13 +9,10 @@ class Point
     raise InvalidPointError unless valid?
   end
 
-  def eql? other
-    @q == other.q && @r == other.r && @s == other.s
-  end
-
   def == other
     @q == other.q && @r == other.r && @s == other.s
   end
+  alias :eql? :==
 
   def hash
     [@q, @r, @s].hash

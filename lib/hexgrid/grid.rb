@@ -2,47 +2,47 @@ class Grid
   include Enumerable
 
   def initialize
-    @tiles = {}
+    @hexs = {}
   end
 
-  def << tile
-    if tile.respond_to? :each
-      tile.each { |t| add_tile t }
+  def << hex
+    if hex.respond_to? :each
+      hex.each { |t| add_hex t }
     else
-      add_tile tile
+      add_hex hex
     end
   end
 
-  def add_tile tile
-    @tiles[tile.point] = tile
-    tile.grid = self
+  def add_hex hex
+    @hexs[hex.point] = hex
+    hex.grid = self
   end
 
-  def >> tile
-    point = tile.point if tile.respond_to? :point
-    point ||= tile
-    removed_tile = @tiles.delete point
-    removed_tile.grid = nil
+  def >> hex
+    point = hex.point if hex.respond_to? :point
+    point ||= hex
+    removed_hex = @hexs.delete point
+    removed_hex.grid = nil
 
-    removed_tile
+    removed_hex
   end
 
   def [] point
-    @tiles[point]
+    @hexs[point]
   end
 
   def each
     if block_given?
-      @tiles.values.each { |tile| yield tile }
+      @hexs.values.each { |hex| yield hex }
     end
   end
 
-  def tiles
-    @tiles.values
+  def hexs
+    @hexs.values
   end
 
   def length
-    @tiles.size
+    @hexs.size
   end
   alias :size :length
 end

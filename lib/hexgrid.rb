@@ -1,6 +1,6 @@
 require "hexgrid/version"
 require "hexgrid/point"
-require "hexgrid/tile"
+require "hexgrid/hex"
 require "hexgrid/grid"
 require "hexgrid/errors"
 
