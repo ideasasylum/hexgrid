@@ -79,5 +79,14 @@ describe Point do
     a.neighbours.sort.must_equal expected
   end
 
+  it 'should return the opposite' do
+    Point::EAST.opposite.must_equal Point::WEST
+    Point::WEST.opposite.must_equal Point::EAST
+    Point::SOUTH_EAST.opposite.must_equal Point::NORTH_WEST
+    Point::NORTH_EAST.opposite.must_equal Point::SOUTH_WEST
+    Point::SOUTH_WEST.opposite.must_equal Point::NORTH_EAST
+    Point::NORTH_WEST.opposite.must_equal Point::SOUTH_EAST
+  end
+
 
 end

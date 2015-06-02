@@ -68,6 +68,10 @@ class Point
       Point::NORTH_EAST
   ]
 
+  def opposite
+    Point.new -@q, -@r, -@s
+  end
+
   def neighbor direction
     raise InvalidDirectionError unless Point::VALID_DIRECTIONS.include? direction
     self + direction

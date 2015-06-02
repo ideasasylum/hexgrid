@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Hexgrid::VERSION
   spec.authors       = ["Jamie Lawrence"]
   spec.email         = ["jamie@ideasasylum.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{An implementation of hexagonal grids described at [http://www.redblobgames.com/grids/hexagons/](http://www.redblobgames.com/grids/hexagons/}
+  spec.description   = %q{Representing and manipulating items on a hexagonal grid. Ideal for games and puzzles like Tantrix}
   spec.homepage      = ""
   spec.license       = "MIT"
 
